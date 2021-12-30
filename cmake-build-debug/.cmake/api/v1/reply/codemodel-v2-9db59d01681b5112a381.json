@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "LTM_Project",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "LTM_Project::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LTM_Project-Debug-84b4ec0f508f1e1c0990.json",
+					"name" : "LTM_Project",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "LTM_Projectmain.c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LTM_Projectmain.c-Debug-9692df9352ab60ece354.json",
+					"name" : "LTM_Projectmain.c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SOURCE_FILES::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SOURCE_FILES-Debug-6f06015bfd29c4ef82c7.json",
+					"name" : "SOURCE_FILES",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/cmake-build-debug",
+		"source" : "/home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
