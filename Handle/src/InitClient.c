@@ -22,3 +22,15 @@ int initSocket(char *address, int port, UserData *userData) {
 
     return userData->sockFd;
 }
+
+char *getIpAddrFromSockAddr(const struct sockaddr_in sockAddrIn) {
+    char *str = NULL;
+    str = (char *) realloc(str, INET_ADDRSTRLEN);
+    struct in_addr ipAddr = sockAddrIn.sin_addr;
+    inet_ntop(AF_INET, &ipAddr, str, INET_ADDRSTRLEN);
+    return str;
+}
+
+int getPortFromSockAddr(const struct sockaddr_in sockAddrIn) {
+    return ntohs(sockAddrIn.sin_port);
+}

@@ -6,7 +6,7 @@
 #define LTM_PROJECT_GAMECONTROLLER_H
 
 #include "structScreen.h"
-#include "handleClient.h"
+#include "handleMain.h"
 
 void on_turn_clicked(GtkButton *button, UserData *userData);
 void on_submit_clicked(GtkButton *button, UserData *userData);

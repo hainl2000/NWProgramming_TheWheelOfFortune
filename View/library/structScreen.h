@@ -14,16 +14,17 @@ typedef struct{
     GtkWidget *password_input;
     GtkWidget *login_button;
     GtkWidget *register_button;
-    GtkWidget *show_status;
+    GtkWidget *show_login_status;
 } LoginContainer;
 
 typedef struct{
     GtkWidget *main_window;
     GtkWidget *show_player_name;
-    GtkWidget *room_id;
+    GtkWidget *input_room_id;
     GtkWidget *join_random_room;
     GtkWidget *create_room;
     GtkWidget *join_room;
+    GtkWidget *show_main_status;
 } MainContainer;
 
 typedef struct{
@@ -33,6 +34,8 @@ typedef struct{
     GtkWidget *player1_name;
     GtkWidget *player2_name;
     GtkWidget *player3_name;
+    GtkWidget *show_room_id;
+    GtkWidget *show_room_status;
 } RoomContainer;
 
 typedef struct{
@@ -40,6 +43,24 @@ typedef struct{
     GtkWidget *turn_button;
     GtkWidget *submit_button;
     GtkWidget *value_input;
+    GtkWidget *show_result;
+    GtkWidget *show_suggest;
+    GtkWidget *p1_point;
+    GtkWidget *p2_point;
+    GtkWidget *p3_point;
+    GtkWidget *show_announcement;
+    GtkWidget *show_turn;
+    GtkWidget *next2_button;
+    GtkWidget *next3_button;
+    GtkWidget *next_final_button;
+    GtkWidget *p1_name;
+    GtkWidget *p2_name;
+    GtkWidget *p3_name;
+    char result1[MAX_LEN_BUFF];
+    char result2[MAX_LEN_BUFF];
+    char result3[MAX_LEN_BUFF];
+    char result_now[MAX_LEN_BUFF];
+    char result_final[MAX_LEN_BUFF];
 } GameContainer;
 
 
@@ -52,37 +73,15 @@ typedef struct{
 
 typedef struct{
     ScreenApp *ScreenApp;
+    pthread_t childThreadId;
     int sockFd;
     int playerID;
     char playerName[30];
+    int current_point;
+    int isTurn;
 } UserData;
 
-typedef struct{
-    ScreenApp *ScreenApp;
-    char player1[30];
-    char player2[30];
-    char player3[30];
-} RoomData;
 
-typedef struct{
-    ScreenApp *ScreenApp;
-    char result1[MAX_LEN_BUFF];
-    char suggest1[MAX_LEN_BUFF];
-    char result1Show[MAX_LEN_BUFF];
-    char result2[MAX_LEN_BUFF];
-    char suggest2[MAX_LEN_BUFF];
-    char result2Show[MAX_LEN_BUFF];
-    char result3[MAX_LEN_BUFF];
-    char suggest3[MAX_LEN_BUFF];
-    char result3Show[MAX_LEN_BUFF];
-    char resultFinal[MAX_LEN_BUFF];
-    char suggestFinal[MAX_LEN_BUFF];
-    char resultFinalShow[MAX_LEN_BUFF];
-    char player1Point[30];
-    char player2Point[30];
-    char player3Point[30];
-    char annoucement[MAX_LEN_BUFF];
-}GameData;
 
 #endif //LTM_PROJECT_STRUCTSCREEN_H
 

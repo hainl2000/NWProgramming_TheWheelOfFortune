@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     userData.ScreenApp = &screenApp;
     initApp(&userData);
 //    printf("init done\n");
-    gtk_widget_show(screenApp.gameContainer.game_window);
+    gtk_widget_show(screenApp.mainContainer.main_window);
 
     gtk_main();
     return 0;
