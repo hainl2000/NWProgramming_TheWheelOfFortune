@@ -8,16 +8,18 @@
 #include <string.h>
 #include "constant.h"
 #include "handleRecvData.h"
+#include "gtk/gtk.h"
 
 #include "constant.h"
 
 
 void handleRecvData(char *dataRecv, UserData *userData)
 {
-    printf("%s\n", dataRecv);
+    printf("data recv: %s\n", dataRecv);
     char *tmp = (char *) calloc(1, MAX_LEN_BUFF);
     strcpy(tmp, dataRecv);
     char *token = strtok(tmp, SEPERATOR);
+
     if(strcmp(token,CREATE_ROOM_SUCCESS) == 0)
     {
         //    success#2#1#player 1  success#2#2#player 1#player 2
@@ -27,14 +29,18 @@ void handleRecvData(char *dataRecv, UserData *userData)
         gtk_widget_hide(userData->ScreenApp->mainContainer.main_window);
         gtk_widget_show(userData->ScreenApp->roomContainer.room_window);
         if (tmp != NULL)
+        {
             free(tmp);
+        }
         return;
     }
     else if(strcmp(token,CREATE_ROOM_FAILURE) == 0)
     {
         gtk_label_set_text(userData->ScreenApp->mainContainer.show_main_status,"Create room fail");
         if (tmp != NULL)
+        {
             free(tmp);
+        }
         return;
     }
 
@@ -52,6 +58,8 @@ void handleRecvData(char *dataRecv, UserData *userData)
         if(players == 1)
         {
             gtk_label_set_text(userData->ScreenApp->roomContainer.player2_name,userData->playerName);
+            gtk_widget_hide(userData->ScreenApp->mainContainer.main_window);
+            gtk_widget_show(userData->ScreenApp->roomContainer.room_window);
         }
         else if(players == 2)
         {
@@ -59,6 +67,8 @@ void handleRecvData(char *dataRecv, UserData *userData)
             printf("nguoi choi 2 la: %s\n",token);
             gtk_label_set_text(userData->ScreenApp->roomContainer.player2_name,token);
             gtk_label_set_text(userData->ScreenApp->roomContainer.player3_name,userData->playerName);
+            gtk_widget_hide(userData->ScreenApp->mainContainer.main_window);
+            gtk_widget_show(userData->ScreenApp->roomContainer.room_window);
         }
 
         if (tmp != NULL) {

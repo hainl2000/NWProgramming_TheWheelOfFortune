@@ -26,7 +26,7 @@ void initLoginScreen(UserData* userData)
 
 void initMainScreen(UserData* userData)
 {
-//    printf("init main\n");
+    printf("init main\n");
     GtkBuilder *builder = gtk_builder_new_from_file("/home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/cmake-build-debug/View/Client.glade");
     userData->ScreenApp->mainContainer.main_window = (GtkWidget *) gtk_builder_get_object(builder,"main_window");
     userData->ScreenApp->mainContainer.show_player_name = (GtkWidget *) gtk_builder_get_object(builder,"show_player_name");

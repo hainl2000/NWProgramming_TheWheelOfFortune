@@ -3,7 +3,7 @@
 //
 #include "InitClient.h"
 
-int initSocket(char *address, int port, UserData *userData) {
+int initSocket(const char *address,const int port, UserData *userData) {
     int client_sock;
     struct sockaddr_in server_addr; /* server's address information */
 
@@ -21,6 +21,7 @@ int initSocket(char *address, int port, UserData *userData) {
     }
 
     return userData->sockFd;
+
 }
 
 char *getIpAddrFromSockAddr(const struct sockaddr_in sockAddrIn) {

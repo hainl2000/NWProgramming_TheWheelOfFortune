@@ -11,7 +11,7 @@
 #define MAX_LEN_BUFF 1024
 #define LOGIN_SUCCESS "login_success"
 #define REGISTER_SUCCESS "register_success"
-#define CREATE_ROOM_SUCCESS "start_game_success"
+#define CREATE_ROOM_SUCCESS "create_room_success"
 #define CREATE_ROOM_FAILURE "create_room_fail"
 #define JOIN_RANDOM_ROOM_SUCCESS "join_random_room_success"
 #define JOIN_RANDOM_ROOM_FAILURE "join_random_room_fail"
