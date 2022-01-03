@@ -8,5 +8,6 @@
 void on_join_random_room_clicked(GtkButton *button, UserData *userData);
 void on_create_room_clicked(GtkButton *button, UserData *userData);
 void on_join_room_clicked(GtkButton *button, UserData *userData);
+void on_submit_in_main_clicked(GtkButton *button, UserData *userData);
 
 #endif //LTM_PROJECT_MAINCONTROLLER_H

@@ -9,7 +9,8 @@
 #include <arpa/inet.h>
 #include <sys/socket.h>
 #include "structScreen.h"
+#include "clientError.h"
 
-int initSocket(char *address, int port, UserData *userData);
+int initSocket(const char *address,const int port, UserData *userData);
 
 #endif //LTM_PROJECT_INITCLIENT_H

@@ -25,6 +25,7 @@ typedef struct{
     GtkWidget *create_room;
     GtkWidget *join_room;
     GtkWidget *show_main_status;
+    GtkWidget *submit_button;
 } MainContainer;
 
 typedef struct{
@@ -44,7 +45,7 @@ typedef struct{
     GtkWidget *submit_button;
     GtkWidget *value_input;
     GtkWidget *show_result;
-    GtkWidget *show_suggest;
+    GtkWidget *show_hint;
     GtkWidget *p1_point;
     GtkWidget *p2_point;
     GtkWidget *p3_point;
@@ -59,8 +60,12 @@ typedef struct{
     char result1[MAX_LEN_BUFF];
     char result2[MAX_LEN_BUFF];
     char result3[MAX_LEN_BUFF];
-    char result_now[MAX_LEN_BUFF];
+    char hint1[MAX_LEN_BUFF];
+    char hint2[MAX_LEN_BUFF];
+    char hint3[MAX_LEN_BUFF];
     char result_final[MAX_LEN_BUFF];
+    char hint_final[MAX_LEN_BUFF];
+    char result_now[MAX_LEN_BUFF];
 } GameContainer;
 
 
@@ -77,8 +82,10 @@ typedef struct{
     int sockFd;
     int playerID;
     char playerName[30];
+    int current_turning_point;
     int current_point;
     int isTurn;
+    int position;
 } UserData;
 
 

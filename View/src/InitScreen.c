@@ -26,7 +26,7 @@ void initLoginScreen(UserData* userData)
 
 void initMainScreen(UserData* userData)
 {
-//    printf("init main\n");
+    printf("init main\n");
     GtkBuilder *builder = gtk_builder_new_from_file("/home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/cmake-build-debug/View/Client.glade");
     userData->ScreenApp->mainContainer.main_window = (GtkWidget *) gtk_builder_get_object(builder,"main_window");
     userData->ScreenApp->mainContainer.show_player_name = (GtkWidget *) gtk_builder_get_object(builder,"show_player_name");
@@ -35,10 +35,12 @@ void initMainScreen(UserData* userData)
     userData->ScreenApp->mainContainer.join_room= (GtkWidget *) gtk_builder_get_object(builder,"join_room");
     userData->ScreenApp->mainContainer.input_room_id = (GtkWidget *) gtk_builder_get_object(builder,"input_room_id");
     userData->ScreenApp->mainContainer.show_main_status = (GtkWidget *) gtk_builder_get_object(builder,"show_main_status");
+    userData->ScreenApp->mainContainer.submit_button = (GtkWidget *) gtk_builder_get_object(builder, "submit_in_main_button");
 
     g_signal_connect(userData->ScreenApp->mainContainer.join_random_room, "clicked",G_CALLBACK(on_join_random_room_clicked), userData);
     g_signal_connect(userData->ScreenApp->mainContainer.create_room, "clicked",G_CALLBACK(on_create_room_clicked), userData);
     g_signal_connect(userData->ScreenApp->mainContainer.join_room, "clicked",G_CALLBACK(on_join_room_clicked), userData);
+    g_signal_connect(userData->ScreenApp->mainContainer.submit_button, "clicked",G_CALLBACK(on_submit_in_main_clicked), userData);
 }
 
 void initRoomScreen(UserData *userData)
@@ -68,7 +70,7 @@ void initGameScreen(UserData *userData)
     userData->ScreenApp->gameContainer.turn_button = (GtkWidget *) gtk_builder_get_object(builder,"turn_button");
     userData->ScreenApp->gameContainer.show_turn = (GtkWidget *) gtk_builder_get_object(builder,"show_turn");
     userData->ScreenApp->gameContainer.show_result = (GtkWidget *) gtk_builder_get_object(builder,"show_result");
-    userData->ScreenApp->gameContainer.show_suggest = (GtkWidget *) gtk_builder_get_object(builder,"show_suggest");
+    userData->ScreenApp->gameContainer.show_hint = (GtkWidget *) gtk_builder_get_object(builder, "show_hint");
     userData->ScreenApp->gameContainer.p1_point = (GtkWidget *) gtk_builder_get_object(builder,"p1_point");
     userData->ScreenApp->gameContainer.p2_point = (GtkWidget *) gtk_builder_get_object(builder,"p2_point");
     userData->ScreenApp->gameContainer.p3_point = (GtkWidget *) gtk_builder_get_object(builder,"p3_point");

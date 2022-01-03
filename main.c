@@ -12,14 +12,13 @@ int main(int argc, char *argv[]) {
     ScreenApp screenApp;
     gtk_init(&argc, &argv);
 
-//    if ((userData.sockFd = initSocket(ADD_R, PORT, &userData)) <= 0)
-//        return userData.sockFd;
+    if ((userData.sockFd = initSocket(ADD_R, PORT, &userData)) <= 0)
+        return userData.sockFd;
 
     userData.ScreenApp = &screenApp;
     initApp(&userData);
 //    printf("init done\n");
-    gtk_widget_show(screenApp.mainContainer.main_window);
-
+    gtk_widget_show(screenApp.loginContainer.login_window);
     gtk_main();
     return 0;
 }

@@ -30,7 +30,6 @@
             <property name="label" translatable="yes">turn</property>
             <property name="width_request">62</property>
             <property name="height_request">34</property>
-            <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
           </object>
@@ -43,7 +42,6 @@
           <object class="GtkEntry" id="value_input">
             <property name="width_request">200</property>
             <property name="height_request">81</property>
-            <property name="visible">True</property>
             <property name="can_focus">True</property>
           </object>
           <packing>
@@ -56,7 +54,6 @@
             <property name="label" translatable="yes">submit</property>
             <property name="width_request">100</property>
             <property name="height_request">80</property>
-            <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
           </object>
@@ -162,6 +159,7 @@
           <object class="GtkLabel" id="show_turn">
             <property name="width_request">100</property>
             <property name="height_request">80</property>
+            <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Turn</property>
           </object>
@@ -176,7 +174,7 @@
             <property name="height_request">80</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Result</property>
+            <property name="label" translatable="yes">result</property>
           </object>
           <packing>
             <property name="x">547</property>
@@ -184,12 +182,12 @@
           </packing>
         </child>
         <child>
-          <object class="GtkLabel" id="show_suggest">
+          <object class="GtkLabel" id="show_hint">
             <property name="width_request">500</property>
             <property name="height_request">80</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Suggest	</property>
+            <property name="label" translatable="yes">Hint</property>
           </object>
           <packing>
             <property name="x">547</property>
@@ -326,10 +324,11 @@
           </packing>
         </child>
         <child>
-          <object class="GtkLabel" id="show_status">
+          <object class="GtkLabel" id="show_login_status">
             <property name="width_request">100</property>
             <property name="height_request">80</property>
             <property name="can_focus">False</property>
+            <property name="label" translatable="yes">aaa</property>
           </object>
           <packing>
             <property name="x">499</property>
@@ -394,10 +393,10 @@
             <property name="height_request">60</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Player</property>
+            <property name="label" translatable="yes">Player_Name</property>
           </object>
           <packing>
-            <property name="x">350</property>
+            <property name="x">468</property>
           </packing>
         </child>
         <child>
@@ -419,11 +418,25 @@
             <property name="width_request">180</property>
             <property name="height_request">80</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">label</property>
+            <property name="label" translatable="yes">Status</property>
           </object>
           <packing>
-            <property name="x">209</property>
-            <property name="y">68</property>
+            <property name="x">413</property>
+            <property name="y">82</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="submit_in_main_button">
+            <property name="label" translatable="yes">OK</property>
+            <property name="width_request">100</property>
+            <property name="height_request">80</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="x">248</property>
+            <property name="y">58</property>
           </packing>
         </child>
       </object>
@@ -443,7 +456,6 @@
             <property name="label" translatable="yes">Start</property>
             <property name="width_request">111</property>
             <property name="height_request">80</property>
-            <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
           </object>
@@ -454,20 +466,20 @@
         </child>
         <child>
           <object class="GtkLabel" id="player1_name">
-            <property name="width_request">100</property>
+            <property name="width_request">111</property>
             <property name="height_request">80</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">label</property>
+            <property name="label" translatable="yes">Waiting player 1</property>
           </object>
         </child>
         <child>
           <object class="GtkLabel" id="player3_name">
-            <property name="width_request">100</property>
+            <property name="width_request">111</property>
             <property name="height_request">80</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">label</property>
+            <property name="label" translatable="yes">Waiting player 3</property>
           </object>
           <packing>
             <property name="y">198</property>
@@ -475,11 +487,11 @@
         </child>
         <child>
           <object class="GtkLabel" id="player2_name">
-            <property name="width_request">100</property>
+            <property name="width_request">111</property>
             <property name="height_request">80</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">label</property>
+            <property name="label" translatable="yes">Waiting player 2</property>
           </object>
           <packing>
             <property name="y">95</property>
@@ -505,7 +517,6 @@
             <property name="height_request">37</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">112</property>
           </object>
           <packing>
             <property name="x">340</property>
@@ -516,11 +527,11 @@
             <property name="width_request">150</property>
             <property name="height_request">80</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Label</property>
+            <property name="label" translatable="yes">Label	</property>
           </object>
           <packing>
-            <property name="x">260</property>
-            <property name="y">77</property>
+            <property name="x">266</property>
+            <property name="y">56</property>
           </packing>
         </child>
       </object>
