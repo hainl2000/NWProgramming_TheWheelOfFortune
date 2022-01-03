@@ -4,7 +4,7 @@
 #include "InitScreen.h"
 #include "InitClient.h"
 
-#define PORT 5500
+#define PORT 5550
 #define ADD_R "127.0.0.1"
 
 int main(int argc, char *argv[]) {
@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     userData.ScreenApp = &screenApp;
     initApp(&userData);
 //    printf("init done\n");
-    gtk_widget_show(screenApp.loginContainer.login_window);
+    gtk_widget_show(screenApp.roomContainer.room_window);
     gtk_main();
     return 0;
 }

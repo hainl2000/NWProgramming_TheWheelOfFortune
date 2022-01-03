@@ -10,7 +10,6 @@
 #include "handleRecvData.h"
 #include "gtk/gtk.h"
 
-#include "constant.h"
 
 
 void handleRecvData(char *dataRecv, UserData *userData)
@@ -27,7 +26,8 @@ void handleRecvData(char *dataRecv, UserData *userData)
         token = strtok(NULL,"#");
         printf("token la: %s\n",token);
         gtk_label_set_text(userData->ScreenApp->roomContainer.show_room_id,token);
-//        gtk_widget_set_visible(userData->ScreenApp->mainContainer.submit_button,TRUE);
+        gtk_label_set_text(userData->ScreenApp->roomContainer.player1_name,userData->playerName);
+        gtk_widget_set_visible(userData->ScreenApp->mainContainer.submit_button,TRUE);
         if (tmp != NULL)
         {
             free(tmp);
@@ -36,6 +36,7 @@ void handleRecvData(char *dataRecv, UserData *userData)
     }
     else if(strcmp(token,CREATE_ROOM_FAILURE) == 0)
     {
+        printf("Vao day fial\n");
         gtk_label_set_text(userData->ScreenApp->mainContainer.show_main_status,"Create room fail");
         gtk_widget_set_visible(userData->ScreenApp->mainContainer.show_main_status,TRUE);
         if (tmp != NULL)
@@ -48,6 +49,7 @@ void handleRecvData(char *dataRecv, UserData *userData)
     if(strcmp(token,JOIN_RANDOM_ROOM_SUCCESS) == 0 || strcmp(token,JOIN_ROOM_BY_ID_SUCCESS) == 0)
     {
 //        join(_random)_room_success#room_id#players#player name
+        gtk_widget_set_visible(userData->ScreenApp->mainContainer.submit_button,TRUE);
         token = strtok(NULL,SEPERATOR);
         gtk_label_set_text(userData->ScreenApp->roomContainer.show_room_id,token);
         token = strtok(NULL,SEPERATOR);
@@ -82,7 +84,9 @@ void handleRecvData(char *dataRecv, UserData *userData)
     else if(strcmp(token,JOIN_RANDOM_ROOM_FAILURE) == 0)
     {
         token = strtok(NULL,SEPERATOR);
+        printf("ly do join rd room fail: %s",token);
         gtk_label_set_text(userData->ScreenApp->mainContainer.show_main_status,token);
+        gtk_widget_set_visible(userData->ScreenApp->mainContainer.show_main_status,TRUE);
 //        gtk_label_set_text(userData->ScreenApp->mainContainer.show_main_status,"Join random room fail");
         if (tmp != NULL)
             free(tmp);
@@ -91,7 +95,9 @@ void handleRecvData(char *dataRecv, UserData *userData)
     else if(strcmp(token,JOIN_ROOM_BY_ID_FAILURE) == 0)
     {
         token = strtok(NULL,SEPERATOR);
+        printf("ly do join room fail: %s",token);
         gtk_label_set_text(userData->ScreenApp->mainContainer.show_main_status,token);
+        gtk_widget_set_visible(userData->ScreenApp->mainContainer.show_main_status,TRUE);
 //        gtk_label_set_text(userData->ScreenApp->mainContainer.show_main_status,"Join room by ID fail");
         if (tmp != NULL)
             free(tmp);
@@ -150,6 +156,7 @@ void handleRecvData(char *dataRecv, UserData *userData)
 
     if (strcmp(token,PLAYER_OUT_ROOM) == 0)
     {
+        gtk_widget_set_visible(userData->ScreenApp->roomContainer.start_button,FALSE);
         token = strtok(NULL,SEPERATOR);
         if (strcmp(token,"1") == 0)
         {
@@ -189,6 +196,7 @@ void handleRecvData(char *dataRecv, UserData *userData)
                 gtk_label_set_text(userData->ScreenApp->roomContainer.player3_name,"");
             }
         }
+
     }
 
     if (strcmp(token,RESULT_AFTER_TURNING) == 0)

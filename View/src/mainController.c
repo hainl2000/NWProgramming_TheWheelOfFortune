@@ -13,10 +13,7 @@
 #include "constant.h"
 
 void on_join_random_room_clicked(GtkButton *button, UserData *userData){
-    char player3Name[MAX_LEN_BUFF];
     printf("Clicked join random\n");
-    userData->playerID = 1;
-    strcpy(userData->playerName,"Toi ten la tao");
     joinRandomRoom(userData->sockFd,userData);
     return;
 }
