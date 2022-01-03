@@ -131,6 +131,20 @@ build CMakeFiles/LTM_Project.dir/Handle/src/handleRecvData.c.o: C_COMPILER__LTM_
   OBJECT_DIR = CMakeFiles/LTM_Project.dir
   OBJECT_FILE_DIR = CMakeFiles/LTM_Project.dir/Handle/src
 
+build CMakeFiles/LTM_Project.dir/Handle/src/handleRoom.c.o: C_COMPILER__LTM_Project_Debug /home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/Handle/src/handleRoom.c || cmake_object_order_depends_target_LTM_Project
+  DEP_FILE = CMakeFiles/LTM_Project.dir/Handle/src/handleRoom.c.o.d
+  FLAGS = -g   -pthread -pthread -std=gnu99
+  INCLUDES = -I/home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/View/library -I/home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/Handle/library -I/usr/include/gtk-3.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/gio-unix-2.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/fribidi -I/usr/include/harfbuzz -I/usr/include/atk-1.0 -I/usr/include/pixman-1 -I/usr/include/uuid -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+  OBJECT_DIR = CMakeFiles/LTM_Project.dir
+  OBJECT_FILE_DIR = CMakeFiles/LTM_Project.dir/Handle/src
+
+build CMakeFiles/LTM_Project.dir/Handle/src/handleGame.c.o: C_COMPILER__LTM_Project_Debug /home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/Handle/src/handleGame.c || cmake_object_order_depends_target_LTM_Project
+  DEP_FILE = CMakeFiles/LTM_Project.dir/Handle/src/handleGame.c.o.d
+  FLAGS = -g   -pthread -pthread -std=gnu99
+  INCLUDES = -I/home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/View/library -I/home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/Handle/library -I/usr/include/gtk-3.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/gio-unix-2.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/fribidi -I/usr/include/harfbuzz -I/usr/include/atk-1.0 -I/usr/include/pixman-1 -I/usr/include/uuid -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+  OBJECT_DIR = CMakeFiles/LTM_Project.dir
+  OBJECT_FILE_DIR = CMakeFiles/LTM_Project.dir/Handle/src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target LTM_Project
@@ -139,7 +153,7 @@ build CMakeFiles/LTM_Project.dir/Handle/src/handleRecvData.c.o: C_COMPILER__LTM_
 #############################################
 # Link the executable LTM_Project
 
-build LTM_Project: C_EXECUTABLE_LINKER__LTM_Project_Debug CMakeFiles/LTM_Project.dir/main.c.o CMakeFiles/LTM_Project.dir/View/src/InitScreen.c.o CMakeFiles/LTM_Project.dir/Handle/src/InitClient.c.o CMakeFiles/LTM_Project.dir/View/src/LoginController.c.o CMakeFiles/LTM_Project.dir/Handle/src/HandleMain.c.o CMakeFiles/LTM_Project.dir/View/src/mainController.c.o CMakeFiles/LTM_Project.dir/View/src/gameController.c.o CMakeFiles/LTM_Project.dir/View/src/roomController.c.o CMakeFiles/LTM_Project.dir/Handle/src/handleLogin.c.o CMakeFiles/LTM_Project.dir/Handle/src/handleRecvData.c.o
+build LTM_Project: C_EXECUTABLE_LINKER__LTM_Project_Debug CMakeFiles/LTM_Project.dir/main.c.o CMakeFiles/LTM_Project.dir/View/src/InitScreen.c.o CMakeFiles/LTM_Project.dir/Handle/src/InitClient.c.o CMakeFiles/LTM_Project.dir/View/src/LoginController.c.o CMakeFiles/LTM_Project.dir/Handle/src/HandleMain.c.o CMakeFiles/LTM_Project.dir/View/src/mainController.c.o CMakeFiles/LTM_Project.dir/View/src/gameController.c.o CMakeFiles/LTM_Project.dir/View/src/roomController.c.o CMakeFiles/LTM_Project.dir/Handle/src/handleLogin.c.o CMakeFiles/LTM_Project.dir/Handle/src/handleRecvData.c.o CMakeFiles/LTM_Project.dir/Handle/src/handleRoom.c.o CMakeFiles/LTM_Project.dir/Handle/src/handleGame.c.o
   FLAGS = -g
   LINK_LIBRARIES = -lgtk-3  -lgdk-3  -lpangocairo-1.0  -lpango-1.0  -lharfbuzz  -latk-1.0  -lcairo-gobject  -lcairo  -lgdk_pixbuf-2.0  -lgio-2.0  -lgobject-2.0  -lglib-2.0  -pthread
   OBJECT_DIR = CMakeFiles/LTM_Project.dir
@@ -171,6 +185,13 @@ build CMakeFiles/SOURCE_FILES.dir/Handle/src/InitClient.c.o: C_COMPILER__SOURCE_
   OBJECT_DIR = CMakeFiles/SOURCE_FILES.dir
   OBJECT_FILE_DIR = CMakeFiles/SOURCE_FILES.dir/Handle/src
 
+build CMakeFiles/SOURCE_FILES.dir/Handle/src/handleGame.c.o: C_COMPILER__SOURCE_FILES_Debug /home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/Handle/src/handleGame.c || cmake_object_order_depends_target_SOURCE_FILES
+  DEP_FILE = CMakeFiles/SOURCE_FILES.dir/Handle/src/handleGame.c.o.d
+  FLAGS = -g   -pthread -std=gnu99
+  INCLUDES = -I/home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/View/library -I/home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/Handle/library -I/usr/include/gtk-3.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/gio-unix-2.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/fribidi -I/usr/include/harfbuzz -I/usr/include/atk-1.0 -I/usr/include/pixman-1 -I/usr/include/uuid -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+  OBJECT_DIR = CMakeFiles/SOURCE_FILES.dir
+  OBJECT_FILE_DIR = CMakeFiles/SOURCE_FILES.dir/Handle/src
+
 build CMakeFiles/SOURCE_FILES.dir/Handle/src/handleLogin.c.o: C_COMPILER__SOURCE_FILES_Debug /home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/Handle/src/handleLogin.c || cmake_object_order_depends_target_SOURCE_FILES
   DEP_FILE = CMakeFiles/SOURCE_FILES.dir/Handle/src/handleLogin.c.o.d
   FLAGS = -g   -pthread -std=gnu99
@@ -180,6 +201,13 @@ build CMakeFiles/SOURCE_FILES.dir/Handle/src/handleLogin.c.o: C_COMPILER__SOURCE
 
 build CMakeFiles/SOURCE_FILES.dir/Handle/src/handleRecvData.c.o: C_COMPILER__SOURCE_FILES_Debug /home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/Handle/src/handleRecvData.c || cmake_object_order_depends_target_SOURCE_FILES
   DEP_FILE = CMakeFiles/SOURCE_FILES.dir/Handle/src/handleRecvData.c.o.d
+  FLAGS = -g   -pthread -std=gnu99
+  INCLUDES = -I/home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/View/library -I/home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/Handle/library -I/usr/include/gtk-3.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/gio-unix-2.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/fribidi -I/usr/include/harfbuzz -I/usr/include/atk-1.0 -I/usr/include/pixman-1 -I/usr/include/uuid -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+  OBJECT_DIR = CMakeFiles/SOURCE_FILES.dir
+  OBJECT_FILE_DIR = CMakeFiles/SOURCE_FILES.dir/Handle/src
+
+build CMakeFiles/SOURCE_FILES.dir/Handle/src/handleRoom.c.o: C_COMPILER__SOURCE_FILES_Debug /home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/Handle/src/handleRoom.c || cmake_object_order_depends_target_SOURCE_FILES
+  DEP_FILE = CMakeFiles/SOURCE_FILES.dir/Handle/src/handleRoom.c.o.d
   FLAGS = -g   -pthread -std=gnu99
   INCLUDES = -I/home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/View/library -I/home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/Handle/library -I/usr/include/gtk-3.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/gio-unix-2.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/fribidi -I/usr/include/harfbuzz -I/usr/include/atk-1.0 -I/usr/include/pixman-1 -I/usr/include/uuid -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
   OBJECT_DIR = CMakeFiles/SOURCE_FILES.dir
@@ -228,7 +256,7 @@ build CMakeFiles/SOURCE_FILES.dir/View/src/roomController.c.o: C_COMPILER__SOURC
 #############################################
 # Link the executable SOURCE_FILES
 
-build SOURCE_FILES: C_EXECUTABLE_LINKER__SOURCE_FILES_Debug CMakeFiles/SOURCE_FILES.dir/Handle/src/HandleMain.c.o CMakeFiles/SOURCE_FILES.dir/Handle/src/InitClient.c.o CMakeFiles/SOURCE_FILES.dir/Handle/src/handleLogin.c.o CMakeFiles/SOURCE_FILES.dir/Handle/src/handleRecvData.c.o CMakeFiles/SOURCE_FILES.dir/View/src/InitScreen.c.o CMakeFiles/SOURCE_FILES.dir/View/src/LoginController.c.o CMakeFiles/SOURCE_FILES.dir/View/src/gameController.c.o CMakeFiles/SOURCE_FILES.dir/View/src/mainController.c.o CMakeFiles/SOURCE_FILES.dir/View/src/roomController.c.o
+build SOURCE_FILES: C_EXECUTABLE_LINKER__SOURCE_FILES_Debug CMakeFiles/SOURCE_FILES.dir/Handle/src/HandleMain.c.o CMakeFiles/SOURCE_FILES.dir/Handle/src/InitClient.c.o CMakeFiles/SOURCE_FILES.dir/Handle/src/handleGame.c.o CMakeFiles/SOURCE_FILES.dir/Handle/src/handleLogin.c.o CMakeFiles/SOURCE_FILES.dir/Handle/src/handleRecvData.c.o CMakeFiles/SOURCE_FILES.dir/Handle/src/handleRoom.c.o CMakeFiles/SOURCE_FILES.dir/View/src/InitScreen.c.o CMakeFiles/SOURCE_FILES.dir/View/src/LoginController.c.o CMakeFiles/SOURCE_FILES.dir/View/src/gameController.c.o CMakeFiles/SOURCE_FILES.dir/View/src/mainController.c.o CMakeFiles/SOURCE_FILES.dir/View/src/roomController.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/SOURCE_FILES.dir
   POST_BUILD = :
@@ -259,6 +287,13 @@ build CMakeFiles/LTM_Projectmain.c.dir/Handle/src/InitClient.c.o: C_COMPILER__LT
   OBJECT_DIR = CMakeFiles/LTM_Projectmain.c.dir
   OBJECT_FILE_DIR = CMakeFiles/LTM_Projectmain.c.dir/Handle/src
 
+build CMakeFiles/LTM_Projectmain.c.dir/Handle/src/handleGame.c.o: C_COMPILER__LTM_Projectmain.2ec_Debug /home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/Handle/src/handleGame.c || cmake_object_order_depends_target_LTM_Projectmain.c
+  DEP_FILE = CMakeFiles/LTM_Projectmain.c.dir/Handle/src/handleGame.c.o.d
+  FLAGS = -g   -pthread -std=gnu99
+  INCLUDES = -I/home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/View/library -I/home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/Handle/library -I/usr/include/gtk-3.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/gio-unix-2.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/fribidi -I/usr/include/harfbuzz -I/usr/include/atk-1.0 -I/usr/include/pixman-1 -I/usr/include/uuid -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+  OBJECT_DIR = CMakeFiles/LTM_Projectmain.c.dir
+  OBJECT_FILE_DIR = CMakeFiles/LTM_Projectmain.c.dir/Handle/src
+
 build CMakeFiles/LTM_Projectmain.c.dir/Handle/src/handleLogin.c.o: C_COMPILER__LTM_Projectmain.2ec_Debug /home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/Handle/src/handleLogin.c || cmake_object_order_depends_target_LTM_Projectmain.c
   DEP_FILE = CMakeFiles/LTM_Projectmain.c.dir/Handle/src/handleLogin.c.o.d
   FLAGS = -g   -pthread -std=gnu99
@@ -268,6 +303,13 @@ build CMakeFiles/LTM_Projectmain.c.dir/Handle/src/handleLogin.c.o: C_COMPILER__L
 
 build CMakeFiles/LTM_Projectmain.c.dir/Handle/src/handleRecvData.c.o: C_COMPILER__LTM_Projectmain.2ec_Debug /home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/Handle/src/handleRecvData.c || cmake_object_order_depends_target_LTM_Projectmain.c
   DEP_FILE = CMakeFiles/LTM_Projectmain.c.dir/Handle/src/handleRecvData.c.o.d
+  FLAGS = -g   -pthread -std=gnu99
+  INCLUDES = -I/home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/View/library -I/home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/Handle/library -I/usr/include/gtk-3.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/gio-unix-2.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/fribidi -I/usr/include/harfbuzz -I/usr/include/atk-1.0 -I/usr/include/pixman-1 -I/usr/include/uuid -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+  OBJECT_DIR = CMakeFiles/LTM_Projectmain.c.dir
+  OBJECT_FILE_DIR = CMakeFiles/LTM_Projectmain.c.dir/Handle/src
+
+build CMakeFiles/LTM_Projectmain.c.dir/Handle/src/handleRoom.c.o: C_COMPILER__LTM_Projectmain.2ec_Debug /home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/Handle/src/handleRoom.c || cmake_object_order_depends_target_LTM_Projectmain.c
+  DEP_FILE = CMakeFiles/LTM_Projectmain.c.dir/Handle/src/handleRoom.c.o.d
   FLAGS = -g   -pthread -std=gnu99
   INCLUDES = -I/home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/View/library -I/home/hainguyen/Desktop/LapTrinhMang/Chiecnonkydieu/Handle/library -I/usr/include/gtk-3.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/gio-unix-2.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/fribidi -I/usr/include/harfbuzz -I/usr/include/atk-1.0 -I/usr/include/pixman-1 -I/usr/include/uuid -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
   OBJECT_DIR = CMakeFiles/LTM_Projectmain.c.dir
@@ -316,7 +358,7 @@ build CMakeFiles/LTM_Projectmain.c.dir/View/src/roomController.c.o: C_COMPILER__
 #############################################
 # Link the executable LTM_Projectmain.c
 
-build LTM_Projectmain.c: C_EXECUTABLE_LINKER__LTM_Projectmain.2ec_Debug CMakeFiles/LTM_Projectmain.c.dir/Handle/src/HandleMain.c.o CMakeFiles/LTM_Projectmain.c.dir/Handle/src/InitClient.c.o CMakeFiles/LTM_Projectmain.c.dir/Handle/src/handleLogin.c.o CMakeFiles/LTM_Projectmain.c.dir/Handle/src/handleRecvData.c.o CMakeFiles/LTM_Projectmain.c.dir/View/src/InitScreen.c.o CMakeFiles/LTM_Projectmain.c.dir/View/src/LoginController.c.o CMakeFiles/LTM_Projectmain.c.dir/View/src/gameController.c.o CMakeFiles/LTM_Projectmain.c.dir/View/src/mainController.c.o CMakeFiles/LTM_Projectmain.c.dir/View/src/roomController.c.o
+build LTM_Projectmain.c: C_EXECUTABLE_LINKER__LTM_Projectmain.2ec_Debug CMakeFiles/LTM_Projectmain.c.dir/Handle/src/HandleMain.c.o CMakeFiles/LTM_Projectmain.c.dir/Handle/src/InitClient.c.o CMakeFiles/LTM_Projectmain.c.dir/Handle/src/handleGame.c.o CMakeFiles/LTM_Projectmain.c.dir/Handle/src/handleLogin.c.o CMakeFiles/LTM_Projectmain.c.dir/Handle/src/handleRecvData.c.o CMakeFiles/LTM_Projectmain.c.dir/Handle/src/handleRoom.c.o CMakeFiles/LTM_Projectmain.c.dir/View/src/InitScreen.c.o CMakeFiles/LTM_Projectmain.c.dir/View/src/LoginController.c.o CMakeFiles/LTM_Projectmain.c.dir/View/src/gameController.c.o CMakeFiles/LTM_Projectmain.c.dir/View/src/mainController.c.o CMakeFiles/LTM_Projectmain.c.dir/View/src/roomController.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/LTM_Projectmain.c.dir
   POST_BUILD = :

@@ -3,7 +3,7 @@ project(LTM_Project C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(LTM_Project main.c View/library/structScreen.h View/library/InitScreen.h View/src/InitScreen.c View/library/LoginController.h Handle/library/constant.h Handle/library/handleMain.h Handle/library/InitClient.h Handle/src/InitClient.c View/src/LoginController.c Handle/src/HandleMain.c View/library/mainController.h View/src/mainController.c View/library/gameController.h View/src/gameController.c View/library/roomController.h View/src/roomController.c Handle/library/handleLogin.h Handle/src/handleLogin.c Handle/library/handleThread.h Handle/library/clientError.h Handle/src/handleRecvData.c Handle/library/handleRecvData.h)
+add_executable(LTM_Project main.c View/library/structScreen.h View/library/InitScreen.h View/src/InitScreen.c View/library/LoginController.h Handle/library/constant.h Handle/library/handleMain.h Handle/library/InitClient.h Handle/src/InitClient.c View/src/LoginController.c Handle/src/HandleMain.c View/library/mainController.h View/src/mainController.c View/library/gameController.h View/src/gameController.c View/library/roomController.h View/src/roomController.c Handle/library/handleLogin.h Handle/src/handleLogin.c Handle/library/handleThread.h Handle/library/clientError.h Handle/src/handleRecvData.c Handle/library/handleRecvData.h Handle/library/handleRoom.h Handle/src/handleRoom.c Handle/library/handleGame.h Handle/src/handleGame.c)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)

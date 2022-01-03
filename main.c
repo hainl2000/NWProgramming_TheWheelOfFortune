@@ -4,7 +4,7 @@
 #include "InitScreen.h"
 #include "InitClient.h"
 
-#define PORT 5550
+#define PORT 5500
 #define ADD_R "127.0.0.1"
 
 int main(int argc, char *argv[]) {

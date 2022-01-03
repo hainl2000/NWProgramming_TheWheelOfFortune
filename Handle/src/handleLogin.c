@@ -6,8 +6,8 @@
 int loginUser(int sockFd,UserData *userData)
 {
     int byte_recv,byte_send;
-    char buff_send[MAX_LEN_BUFF];
-    char *buff_recv[MAX_LEN_BUFF];
+    char *buff_send = (char *) calloc(1, MAX_LEN_BUFF);
+    char *buff_recv = (char *) calloc(1, MAX_LEN_BUFF);
     char *username = (char *)gtk_entry_get_text(userData->ScreenApp->loginContainer.username_input);
     char *password = (char *)gtk_entry_get_text(userData->ScreenApp->loginContainer.password_input);
     //send
@@ -27,16 +27,12 @@ int loginUser(int sockFd,UserData *userData)
 //  login_sucess#id
     printf("buff_recv: %s\n",buff_recv);
     char *token = strtok(buff_recv,SEPERATOR);
-//    printf("%s\n",token);
     if (strcmp(buff_recv,LOGIN_SUCCESS)==0){
         token = strtok(NULL,"#");
         userData->playerID = atoi(token);
-        printf("id: %d\n",userData->playerID);
-//        free(buff_recv);
+        printf("id nguoi choi: %d\n",userData->playerID);
+        free(buff_recv);
 //        free(token);
-        memset(buff_recv,'\0',strlen(buff_recv)+1);
-        memset(token,'\0',strlen(token)+1);
-        printf("Vao day\n");
         return 1;
     }
     else
@@ -48,8 +44,8 @@ int loginUser(int sockFd,UserData *userData)
 
 int registerUser(int sockFd,UserData *userData){
     int byte_recv,byte_send;
-    char buff_send[MAX_LEN_BUFF];
-    char buff_recv[MAX_LEN_BUFF];
+    char *buff_send = (char *) calloc(1, MAX_LEN_BUFF);
+    char *buff_recv = (char *) calloc(1, MAX_LEN_BUFF);
     char *username = (char *)gtk_entry_get_text(userData->ScreenApp->loginContainer.username_input);
     char *password = (char *)gtk_entry_get_text(userData->ScreenApp->loginContainer.password_input);
 
@@ -73,8 +69,9 @@ int registerUser(int sockFd,UserData *userData){
     if (strcmp(buff_recv,REGISTER_SUCCESS)==0){
         token = strtok(NULL,"#");
         userData->playerID = atoi(token);
-        memset(buff_recv,'\0',strlen(buff_recv)+1);
-        memset(token,'\0',strlen(token)+1);
+        free(buff_recv);
+//        memset(buff_recv,'\0',strlen(buff_recv)+1);
+//        memset(token,'\0',strlen(token)+1);
         return 1;
     }
     else
