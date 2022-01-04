@@ -30,6 +30,7 @@
             <property name="label" translatable="yes">turn</property>
             <property name="width_request">62</property>
             <property name="height_request">34</property>
+            <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
           </object>
@@ -42,6 +43,7 @@
           <object class="GtkEntry" id="value_input">
             <property name="width_request">200</property>
             <property name="height_request">81</property>
+            <property name="visible">True</property>
             <property name="can_focus">True</property>
           </object>
           <packing>
@@ -54,6 +56,7 @@
             <property name="label" translatable="yes">submit</property>
             <property name="width_request">100</property>
             <property name="height_request">80</property>
+            <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
           </object>

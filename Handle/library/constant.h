@@ -9,6 +9,7 @@
 
 
 #define MAX_LEN_BUFF 1024
+#define LEN_BUFF 2048
 #define LOGIN_SUCCESS "login_success"
 #define LOGIN_FAILURE "login_fail"
 #define REGISTER_SUCCESS "register_success"

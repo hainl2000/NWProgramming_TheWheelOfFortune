@@ -29,7 +29,9 @@ void on_turn_clicked(GtkButton *button, UserData *userData)
 void on_submit_clicked(GtkButton *button, UserData *userData)
 {
     char *annountcement = (char *) calloc(1, MAX_LEN_BUFF);
-    char *current_result = (char *) calloc(1, MAX_LEN_BUFF);
+//    strcpy(annountcement,"truyen gia tri");
+//    sendResultAfterTurning(userData->sockFd,annountcement);
+    char *current_result = (char *) calloc(1, 100);
     char *character = (char *) gtk_entry_get_text(GTK_ENTRY(userData->ScreenApp->gameContainer.value_input));
 //    printf("Chu nhap: %s\n",character);
     int times = 0;
@@ -52,9 +54,10 @@ void on_submit_clicked(GtkButton *button, UserData *userData)
 //        printf("diem moi: %d\n",userData->current_point);
     }
     userData->isTurn = 0;
-    gtk_widget_set_visible(userData->ScreenApp->gameContainer.value_input,FALSE);
-    gtk_widget_set_visible(userData->ScreenApp->gameContainer.submit_button,FALSE);
-    gtk_widget_set_visible(userData->ScreenApp->gameContainer.turn_button,FALSE);
+    gtk_label_set_text(userData->ScreenApp->gameContainer.show_turn,"Not your turn");
+//    gtk_widget_set_visible(userData->ScreenApp->gameContainer.value_input,FALSE);
+//    gtk_widget_set_visible(userData->ScreenApp->gameContainer.submit_button,FALSE);
+//    gtk_widget_set_visible(userData->ScreenApp->gameContainer.turn_button,FALSE);
     sprintf(annountcement,"result_after_turning#%d#%d#%s#%d#%d#%s",userData->position,userData->current_turning_point,
             character,times,userData->current_point,show_result);
     printf("thong bao:%s\n",annountcement);
