@@ -150,9 +150,14 @@ void handleRecvData(char *dataRecv, UserData *userData)
         if (firstTurn == userData->position)
         {
             userData->isTurn =1;
-            gtk_widget_set_visible(userData->ScreenApp->gameContainer.turn_button ,TRUE);
-            gtk_widget_set_visible(userData->ScreenApp->gameContainer.value_input,TRUE);
-            gtk_widget_set_visible(userData->ScreenApp->gameContainer.submit_button,TRUE);
+            gtk_label_set_text(userData->ScreenApp->gameContainer.show_turn,"Your turn");
+//            gtk_widget_set_visible(userData->ScreenApp->gameContainer.turn_button ,TRUE);
+//            gtk_widget_set_visible(userData->ScreenApp->gameContainer.value_input,TRUE);
+//            gtk_widget_set_visible(userData->ScreenApp->gameContainer.submit_button,TRUE);
+        }
+        else if (firstTurn != userData->position)
+        {
+            gtk_label_set_text(userData->ScreenApp->gameContainer.show_turn,"Not your turn");
         }
         gtk_widget_set_visible(userData->ScreenApp->roomContainer.start_button,TRUE);
         printf("dap an: %s\n",result);
@@ -209,9 +214,13 @@ void handleRecvData(char *dataRecv, UserData *userData)
 
     if (strcmp(token,RESULT_AFTER_TURNING) == 0)
     {
+//        printf("Ta %s vao day\n",userData->playerName);
+//        token = strtok(NULL,SEPERATOR);
+//        int nextTurn = atoi(token);
+//        printf("Next turn la: %d\n",nextTurn);
         //result_after_turning#vi tri cua player#diem o chu quay trung#chu cai nhap vao#so chu xuat hien#new point#show_kq
-        char *announcement[MAX_LEN_BUFF];
-        char *playerName[MAX_LEN_BUFF];
+        char announcement[MAX_LEN_BUFF];
+        char playerName[100];
         //vi tri cua ng quay
         token = strtok(NULL,SEPERATOR);
         int position = atoi(token);
@@ -269,15 +278,16 @@ void handleRecvData(char *dataRecv, UserData *userData)
         printf("loi 0\n");
         if (userData->position == nextPosition)
         {
-            printf("loi 1\n");
+//            printf("loi 1\n");
             userData->isTurn =1;
-            printf("loi 2\n");
-            gtk_widget_set_visible(userData->ScreenApp->gameContainer.turn_button ,TRUE);
-            printf("loi 3\n");
-            gtk_widget_set_visible(userData->ScreenApp->gameContainer.value_input,TRUE);
-            printf("loi 4\n");
-            gtk_widget_set_visible(userData->ScreenApp->gameContainer.submit_button,TRUE);
-            printf("loi 5\n");
+            gtk_label_set_text(userData->ScreenApp->gameContainer.show_turn,"Your turn");
+//            printf("loi 2\n");
+//            gtk_widget_set_visible(userData->ScreenApp->gameContainer.turn_button ,TRUE);
+//            printf("loi 3\n");
+//            gtk_widget_set_visible(userData->ScreenApp->gameContainer.value_input,TRUE);
+//            printf("loi 4\n");
+//            gtk_widget_set_visible(userData->ScreenApp->gameContainer.submit_button,TRUE);
+//            printf("loi 5\n");
         }
         printf("vi tri tiep theo: %s\n",token);
         return;
