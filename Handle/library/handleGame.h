@@ -7,6 +7,6 @@
 
 #include  "structScreen.h"
 
-void sendResultAfterTurning(int sockFd, UserData *userData,char *annoucement);
+void sendResultAfterTurning(int sockFd,char *annoucement);
 
 #endif //LTM_PROJECT_HANDLEGAME_H

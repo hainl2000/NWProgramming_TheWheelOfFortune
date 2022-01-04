@@ -8,7 +8,7 @@
 #include <sys/socket.h>
 #include <string.h>
 
-void sendResultAfterTurning(int sockFd, UserData *userData, char *announcement)
+void sendResultAfterTurning(int sockFd, char *announcement)
 {
     char *buff_send = (char *) calloc(1, MAX_LEN_BUFF);
     int byte_send = 0;

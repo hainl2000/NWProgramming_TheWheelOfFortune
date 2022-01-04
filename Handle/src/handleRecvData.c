@@ -34,7 +34,8 @@ void handleRecvData(char *dataRecv, UserData *userData)
         }
         return;
     }
-    else if(strcmp(token,CREATE_ROOM_FAILURE) == 0)
+
+    if(strcmp(token,CREATE_ROOM_FAILURE) == 0)
     {
         printf("Vao day fial\n");
         gtk_label_set_text(userData->ScreenApp->mainContainer.show_main_status,"Create room fail");
@@ -49,7 +50,6 @@ void handleRecvData(char *dataRecv, UserData *userData)
     if(strcmp(token,JOIN_RANDOM_ROOM_SUCCESS) == 0 || strcmp(token,JOIN_ROOM_BY_ID_SUCCESS) == 0)
     {
 //        join(_random)_room_success#room_id#players#player name
-        gtk_widget_set_visible(userData->ScreenApp->mainContainer.submit_button,TRUE);
         token = strtok(NULL,SEPERATOR);
         gtk_label_set_text(userData->ScreenApp->roomContainer.show_room_id,token);
         token = strtok(NULL,SEPERATOR);
@@ -79,9 +79,11 @@ void handleRecvData(char *dataRecv, UserData *userData)
         if (tmp != NULL) {
             free(tmp);
         }
+        gtk_widget_set_visible(userData->ScreenApp->mainContainer.submit_button,TRUE);
         return;
     }
-    else if(strcmp(token,JOIN_RANDOM_ROOM_FAILURE) == 0)
+
+    if(strcmp(token,JOIN_RANDOM_ROOM_FAILURE) == 0)
     {
         token = strtok(NULL,SEPERATOR);
         printf("ly do join rd room fail: %s",token);
@@ -92,7 +94,8 @@ void handleRecvData(char *dataRecv, UserData *userData)
             free(tmp);
         return;
     }
-    else if(strcmp(token,JOIN_ROOM_BY_ID_FAILURE) == 0)
+
+    if(strcmp(token,JOIN_ROOM_BY_ID_FAILURE) == 0)
     {
         token = strtok(NULL,SEPERATOR);
         printf("ly do join room fail: %s",token);
@@ -112,13 +115,13 @@ void handleRecvData(char *dataRecv, UserData *userData)
         if (player == 1)
         {
             token = strtok(NULL,SEPERATOR);
-            printf("Player 2 vao room %s",token);
+//            printf("Player 2 vao room %s",token);
             gtk_label_set_text(userData->ScreenApp->roomContainer.player2_name,token);
         }
         if (player == 2)
         {
             token = strtok(NULL,SEPERATOR);
-            printf("Player 3 vao room %s",token);
+//            printf("Player 3 vao room %s",token);
             gtk_label_set_text(userData->ScreenApp->roomContainer.player3_name,token);
         }
         if (tmp != NULL)
@@ -128,21 +131,22 @@ void handleRecvData(char *dataRecv, UserData *userData)
 
     if (strcmp(token,CAN_START_GAME) == 0)
     {
+        //can_start_game#cauhoi#goiy#first_turn
+        printf("userPosition: %d\n",userData->position);
         char *result =  (char *) calloc(1, MAX_LEN_BUFF);
         char *hint = (char *) calloc(1, MAX_LEN_BUFF);
+        //cauhoi
         token = strtok(NULL,SEPERATOR);
         strcpy(result,token);
+        //goi y
         token = strtok(NULL,SEPERATOR);
         strcpy(hint,token);
         strcpy(userData->ScreenApp->gameContainer.result1,result);
         strcpy(userData->ScreenApp->gameContainer.hint1,hint);
         strcpy(userData->ScreenApp->gameContainer.result_now,result);
-        free(result);
-        free(hint);
+        //first turn
         token = strtok(NULL,SEPERATOR);
         int firstTurn = atoi(token);
-//        char *position = (char *) calloc(1,MAX_LEN_BUFF);
-//        sprintf(position,"%d",userData->position);
         if (firstTurn == userData->position)
         {
             userData->isTurn =1;
@@ -150,8 +154,12 @@ void handleRecvData(char *dataRecv, UserData *userData)
             gtk_widget_set_visible(userData->ScreenApp->gameContainer.value_input,TRUE);
             gtk_widget_set_visible(userData->ScreenApp->gameContainer.submit_button,TRUE);
         }
-//        free(position);
         gtk_widget_set_visible(userData->ScreenApp->roomContainer.start_button,TRUE);
+        printf("dap an: %s\n",result);
+        printf("hint: %s\n",hint);
+        free(result);
+        free(hint);
+        return;
     }
 
     if (strcmp(token,PLAYER_OUT_ROOM) == 0)
@@ -201,36 +209,44 @@ void handleRecvData(char *dataRecv, UserData *userData)
 
     if (strcmp(token,RESULT_AFTER_TURNING) == 0)
     {
-        char *announcement = (char *) calloc(1, MAX_LEN_BUFF);
-        char *playerName = (char *) calloc(1, MAX_LEN_BUFF);
+        //result_after_turning#vi tri cua player#diem o chu quay trung#chu cai nhap vao#so chu xuat hien#new point#show_kq
+        char *announcement[MAX_LEN_BUFF];
+        char *playerName[MAX_LEN_BUFF];
+        //vi tri cua ng quay
         token = strtok(NULL,SEPERATOR);
         int position = atoi(token);
+        printf("nguoi quay: %d\n",position);
+        //diem o chu quay trung
         token = strtok(NULL,SEPERATOR);
+        printf("diem o chu: %s\n",token);
         if (position == 1)
         {
             strcpy(playerName, gtk_label_get_text(userData->ScreenApp->gameContainer.p1_name));
-//            gtk_label_set_text(userData->ScreenApp->gameContainer.p1_point,token);
-            sprintf(announcement,"Player %s quay vao o %s diem va doan chu",playerName,token);
         }
         else if (position == 2)
         {
             strcpy(playerName, gtk_label_get_text(userData->ScreenApp->gameContainer.p2_name));
-//            gtk_label_set_text(userData->ScreenApp->gameContainer.p2_point,token);
-            sprintf(announcement,"Player %s quay vao o %s diem va doan chu ",playerName,token);
         }
         else if (position == 3)
         {
             strcpy(playerName, gtk_label_get_text(userData->ScreenApp->gameContainer.p3_name));
-//            gtk_label_set_text(userData->ScreenApp->gameContainer.p3_point,token);
-            sprintf(announcement,"Player %s quay vao o %s diem va doan chu ",playerName,token);
         }
+        sprintf(announcement,"Player %s quay vao o %s diem va doan chu ",playerName,token);
+        //chu nhap
         token = strtok(NULL,SEPERATOR);
+        printf("chu: %s\n",token);
         strcat(announcement,token);
         strcat(announcement," va xuat hien ");
+        //so lan xuat hien
         token = strtok(NULL,SEPERATOR);
+        printf("xuat hien: %s\n",token);
         strcat(announcement,token);
         strcat(announcement," lan.");
+        printf("Toan bo thong bao: %s\n",announcement);
+        gtk_label_set_text(userData->ScreenApp->gameContainer.show_announcement,announcement);
+        //new point
         token = strtok(NULL,SEPERATOR);
+        printf("diem sau vong nay: %s\n",token);
         if (position == 1)
         {
             gtk_label_set_text(userData->ScreenApp->gameContainer.p1_point,token);
@@ -243,19 +259,30 @@ void handleRecvData(char *dataRecv, UserData *userData)
         {
             gtk_label_set_text(userData->ScreenApp->gameContainer.p3_point,token);
         }
+        //show ket qua
         token = strtok(NULL,SEPERATOR);
+        printf("ket qua sau vong nay: %s\n",token);
         gtk_label_set_text(userData->ScreenApp->gameContainer.show_result,token);
+        //turn moi
         token = strtok(NULL,SEPERATOR);
         int nextPosition = atoi(token);
-        if (nextPosition == userData->position)
+        printf("loi 0\n");
+        if (userData->position == nextPosition)
         {
+            printf("loi 1\n");
             userData->isTurn =1;
+            printf("loi 2\n");
             gtk_widget_set_visible(userData->ScreenApp->gameContainer.turn_button ,TRUE);
+            printf("loi 3\n");
             gtk_widget_set_visible(userData->ScreenApp->gameContainer.value_input,TRUE);
+            printf("loi 4\n");
             gtk_widget_set_visible(userData->ScreenApp->gameContainer.submit_button,TRUE);
+            printf("loi 5\n");
         }
-        free(announcement);
-        free(playerName);
+        printf("vi tri tiep theo: %s\n",token);
+        return;
+//        free(announcement);
+//        free(playerName);
     }
 
 }

@@ -45,6 +45,7 @@ void on_out_button_clicked(GtkButton *button, UserData *userData)
     gtk_label_set_text(userData->ScreenApp->roomContainer.player1_name,"");
     gtk_label_set_text(userData->ScreenApp->roomContainer.player2_name,"");
     gtk_label_set_text(userData->ScreenApp->roomContainer.player3_name,"");
+    gtk_widget_set_visible(userData->ScreenApp->mainContainer.show_main_status,FALSE);
     gtk_widget_set_visible(userData->ScreenApp->mainContainer.submit_button,FALSE);
     outRoom(userData->sockFd,userData);
     gtk_widget_hide(userData->ScreenApp->roomContainer.room_window);
